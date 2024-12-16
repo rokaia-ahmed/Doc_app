@@ -8,6 +8,7 @@ class DoctorImageAndText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.topCenter,
       children: [
         SvgPicture.asset('assets/svgs/docdoc_logo_low_opacity.svg',),
         Container(
