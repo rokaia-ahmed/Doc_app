@@ -50,9 +50,8 @@ dependencies:
   flutter_svg: ^2.0.16
   flutter_screenutil: ^5.9.3
   build_runner: ^2.4.13
-
-
-
+  shared_preferences: ^2.3.4
+  flutter_secure_storage: ^9.2.2
 
 
 dev_dependencies:

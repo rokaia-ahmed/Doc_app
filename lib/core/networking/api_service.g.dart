@@ -12,7 +12,7 @@ class _ApiService implements ApiService {
   _ApiService(
     this._dio, {
     this.baseUrl,
-    //this.errorLogger,
+   // this.errorLogger,
   }) {
     baseUrl ??= 'https://vcare.integration25.com/api/';
   }
@@ -51,7 +51,7 @@ class _ApiService implements ApiService {
     try {
       _value = LoginResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
-      //errorLogger?.logError(e, s, _options);
+     // errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

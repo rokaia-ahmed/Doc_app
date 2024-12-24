@@ -1,4 +1,3 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -42,7 +41,7 @@ class SharedPrefHelper {
         return null;
     }
   }
-Gets
+
   /// Gets a bool value from SharedPreferences with given [key].
   static getBool(String key) async {
     debugPrint('SharedPrefHelper : getBool with key : $key');
@@ -92,4 +91,4 @@ Gets
     const flutterSecureStorage = FlutterSecureStorage();
     await flutterSecureStorage.deleteAll();
   }
-}*/
+}

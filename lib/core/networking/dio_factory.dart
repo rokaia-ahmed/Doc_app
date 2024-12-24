@@ -29,8 +29,8 @@ class DioFactory {
   static void addDioHeaders() async {
     dio?.options.headers = {
       'Accept': 'application/json',
-      'Authorization':''
-     // 'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      'Authorization':
+      'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
     };
   }
 
