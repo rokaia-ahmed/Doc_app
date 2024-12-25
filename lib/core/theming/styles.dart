@@ -71,4 +71,17 @@ class TextStyles{
     fontWeight: FontWeight.w400,
     color: ColorsManager.darkBlue,
   );
+
+  static TextStyle font13DarkBlueRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font13BlueSemiBold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.mainBlue,
+  );
+
 }

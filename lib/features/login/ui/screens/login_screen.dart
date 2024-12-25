@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
-import '../widgets/already_have_account_text.dart';
+import '../widgets/dont_have_account_text.dart';
 import '../widgets/email_password.dart';
 import '../widgets/login_bloc_listener.dart';
 import '../widgets/terms_conditions_text.dart';
@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                     verticalSpace(30),
                     TermsConditionsText(),
                     verticalSpace(20),
-                    AlreadyHaveAccountText(),
+                    DontHaveAccountText(),
                     LoginBlocListener(),
                   ],
                 ),
