@@ -38,7 +38,7 @@ android {
         }
 
     }
-    flavorDimensions  "default"
+    flavorDimensions "default"
     productFlavors {
         production {
             dimension "default"
