@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/helpers/spacing.dart';
+import '../../../logic/home_cubit.dart';
+import '../../../logic/home_state.dart';
+import '../doctors_list/doctors_shimmer_loading.dart';
 import 'speciality_list_view.dart';
 import 'speciality_shimmer_loading.dart';
 
@@ -9,7 +12,26 @@ class SpecializationsBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return setupSuccess();
+    return BlocBuilder<HomeCubit, HomeState>(
+      buildWhen: (previous, current) =>
+      current is SpecializationLoading ||
+          current is SpecializationSuccess ||
+          current is SpecializationError,
+      builder: (context, state) {
+        return state.maybeWhen(
+            specializationLoading: () {
+              return setupLoading();
+            },
+            specializationSuccess: (specializationDataList) {
+              var specializationsList = specializationDataList;
+              return setupSuccess(specializationsList);
+            },
+            specializationError: (errorHandler) => setupError(),
+            orElse: () {
+              return const SizedBox.shrink();
+            });
+      },
+    );
   }
 
   /// shimmer loading for specializations and doctors
@@ -19,15 +41,15 @@ class SpecializationsBlocBuilder extends StatelessWidget {
         children: [
           const SpecialityShimmerLoading(),
           verticalSpace(8),
-         // const DoctorsShimmerLoading(),
+          const DoctorsShimmerLoading(),
         ],
       ),
     );
   }
 
-  Widget setupSuccess(/*specializationsList*/) {
+  Widget setupSuccess(specializationsList) {
     return SpecialityListView(
-    //  specializationDataList: specializationsList ?? [],
+      specializationDataList: specializationsList ?? [],
     );
   }
 
