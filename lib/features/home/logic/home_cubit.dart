@@ -17,7 +17,13 @@ class HomeCubit extends Cubit<HomeState> {
     final response =await  _homeRepo.getSpecializations();
     response.when(
         success: (data){
-          emit(HomeState.specializationSuccess(data));
+          specializationsList =
+              data.specializationDataList ?? [];
+
+          // getting the doctors list for the first specialization by default.
+          getDoctorsList(specializationId: specializationsList?.first?.id);
+
+          emit(HomeState.specializationSuccess(data.specializationDataList));
         },
         failure: (error){
           emit(HomeState.specializationError(

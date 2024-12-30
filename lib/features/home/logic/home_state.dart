@@ -12,7 +12,7 @@ part 'home_state.freezed.dart';
 
   const factory HomeState.specializationLoading() =SpecializationLoading ;
   const factory HomeState.specializationSuccess
-      (SpecializationsResponseModel model) = SpecializationSuccess ;
+      (List<SpecializationsData?>? specializationDataList) = SpecializationSuccess ;
   const factory HomeState.specializationError(String message) = SpecializationError ;
 
   // Doctors
